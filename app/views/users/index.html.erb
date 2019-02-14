@@ -1,0 +1,13 @@
+<h1>登録者一覧</h1>
+<% @users.each do |user|%>
+<p>
+  <%= user.name%>
+  <%= user.age%>
+  <%= link_to "編集", "/users/#{user.id}/edit", method: :get%>
+  <%= link_to "削除", "/users/#{user.id}", method: :delete, data:{confirm: "削除してよろしいですか？"}%>
+</p>
+<% end %>
+
+<p>
+  <%= link_to "新規登録", "/users/new"%>
+</p>
